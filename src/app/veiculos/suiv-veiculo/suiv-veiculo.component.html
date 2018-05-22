@@ -1,0 +1,209 @@
+<div class="ui-fluid">
+  <div class="card no-margin">
+    <form [formGroup]="formulario" autocomplete="off">
+
+      <h1>
+        <h1>SUIV Consulta Veículo</h1>
+      </h1>
+
+      <div class="ui-g form-group">
+
+
+        <div class="ui-g-11 ui-md-8">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="placa"  maxlength="7" name="placa" (blur)="consultaPlaca()">
+            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['placa'].valid&&formulario.controls['placa'].dirty">
+              <span *ngIf="formulario.controls['placa'].errors&&formulario.controls['placa'].errors['minlength']">O Campo Placa deve conter no mínimo 7 caracteres.</span>
+            </div>
+            <label>Placa</label>
+          </span>
+        </div>
+
+        <div class="ui-g-1 ui-md-2">
+          <p-progressSpinner [hidden]="!pesquisandoPlaca" [style]="{ width: '25px', height: '25px' }"></p-progressSpinner>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="modelo" name="modelo">
+            <label>Modelo</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="versao" name="versao">
+            <label>Versao</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="anoFab" name="anoFab">
+            <label>Ano Fabricação</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="anoMod" name="anoMod">
+            <label>Ano Modelo</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="combustivel" name="combustivel">
+            <label>Combustivel</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="segmento" name="segmento">
+            <label>Segmento</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="subsegmento" name="subsegmento">
+            <label>Subsegmento</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="carroceria" name="carroceria">
+            <label>Carroceria</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="potencia" name="potencia">
+            <label>Potencia</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="procedencia" name="procedencia">
+            <label>Procedencia</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="eixosQtd" name="eixosQtd">
+            <label>Quantidade Eixos</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="eixosQtd" name="eixosQtd">
+            <label>Quantidade Eixos</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="cMT" name="cMT">
+            <label>CMT</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="motorizacao" name="motorizacao">
+            <label>Motorizacao</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="numLugares" name="numLugares">
+            <label>Lugares</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="capacCarga" name="capacCarga">
+            <label>Capacidade Carga</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="numCaixaCambio" name="numCaixaCambio">
+            <label>CaixaCambio</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="numEixoTras" name="numEixoTras">
+            <label>Número Eixos Traseiros</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="numEixoAux" name="numEixoAux">
+            <label>Número Eixos Auxiliares</label>
+          </span>
+        </div>
+
+        <div class="ui-g-12 ui-md-3">
+          <span class="md-inputfield">
+            <input type="text" pInputText formControlName="numMotor" name="numMotor">
+            <label>Número Motor</label>
+          </span>
+        </div>
+
+
+       <div class="ui-g-12 ui-md-12">
+        <p-fieldset legend="Complementos" [toggleable]="true" [collapsed]="true">
+            <div class="ui-g-12 ui-md-12">
+              <p-table [value]="complementos">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>FIPE</th>
+                    <th>Ano</th>
+                    <th>Combustivel</th>
+                    <th>Preço</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-comp let-rowIndex="rowIndex">
+                  <tr>
+                    <td>{{comp.fipe}}</td>
+                    <td>{{comp.descAno}}</td>
+                    <td>{{comp.combustivel}}</td>
+                    <td>{{comp.preco}}</td>
+                   </tr>
+                </ng-template>
+
+                <ng-template pTemplate="emptymessage">
+                  <tr>
+                    <td colspan="4">
+                      Nenhum Complemento Encontrado
+                    </td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+          </p-fieldset>
+
+        </div>
+
+
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
